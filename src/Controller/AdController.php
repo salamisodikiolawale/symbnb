@@ -60,6 +60,9 @@ class AdController extends AbstractController
                 $image->setAd($ad);
                 $manager->persist($image);
             }
+
+            $ad->setAuthor($this->getUser());//Lier l'auteur a son article qu'il a creer
+            
             $manager->persist($ad);
             $manager->flush();
 
