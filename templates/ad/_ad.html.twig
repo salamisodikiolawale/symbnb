@@ -23,6 +23,11 @@
                         </p>
                         <a href="{{ url }}" class="btn btn-secondary">
                         En savoir plus!</a>
+                        
+                        {#Si il y a un user connecté et l'annonce a ete creer pas le user connecté actuellement#}
+                        {% if app.user and app.user == ad.author %}
+                            <a href="{{path('ads_edit', { 'slug': ad.slug } )}}" class="btn btn-secondary">Modifier l'annonce</a>
+                        {% endif %}
                     </div>
                 </div>
         </div>
